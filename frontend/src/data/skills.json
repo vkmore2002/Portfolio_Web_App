@@ -1,0 +1,50 @@
+[
+  {
+    "id": "01",
+    "category": "Frontend",
+    "skills": [
+      { "name": "React.js", "level": 70 },
+      { "name": "Tailwind CSS", "level": 50 },
+      { "name": "HTML", "level": 92 },
+      { "name": "CSS", "level": 85 },
+      { "name": "Bootstrap", "level": 50 }
+    ]
+  },
+  {
+    "id": "02",
+    "category": "Backend",
+    "skills": [
+      { "name": "Node.js", "level": 75 },
+      { "name": "Express.js", "level": 75 }
+    ]
+  },
+  {
+    "id": "03",
+    "category": "Database",
+    "skills": [
+      { "name": "MongoDB", "level": 80 },
+      { "name": "MySQL", "level": 85 }
+    ]
+  },
+  {
+    "id": "04",
+    "category": "Languages",
+    "skills": [
+      { "name": "JavaScript", "level": 82 },
+      { "name": "Python", "level": 50 },
+      { "name": "Java", "level": 90 }
+    ]
+  },
+  {
+    "id": "05",
+    "category": "Tools",
+    "skills": [
+      { "name": "Git", "level": 85 },
+      { "name": "GitHub", "level": 85 },
+      { "name": "VS Code", "level": 95 },
+      { "name": "Postman", "level": 80 },
+      { "name": "Vercel", "level": 82 },
+      { "name": "Render", "level": 75 }
+    ]
+  }
+]

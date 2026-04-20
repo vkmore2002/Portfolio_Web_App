@@ -1,0 +1,67 @@
+[
+  {
+    "id": "01",
+    "title": "E-Commerce Platform",
+    "tagline": "Full-stack online shopping system",
+    "description": "A complete e-commerce web application with user authentication, product management, cart system, and order processing. Built with a scalable backend and clean UI, it allows users to browse products, add to cart, and place orders while admins can manage inventory and listings.",
+    "stack": ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "thumbnail": "",
+    "status": "completed",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "02",
+    "title": "Sign Language Detection System",
+    "tagline": "Real-time gesture to text conversion",
+    "description": "An AI-based system that detects hand gestures using a webcam and converts them into alphabets, words, and sentences in real time. Includes special gesture controls for space, backspace, clear, and text-to-speech. Designed with a GUI interface and supports hierarchical classification for improved accuracy.",
+    "stack": ["Python", "TensorFlow", "OpenCV", "NumPy", "Tkinter"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "thumbnail": "",
+    "status": "in-progress",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "03",
+    "title": "Fitness Builder Web App",
+    "tagline": "Personalized workout planning",
+    "description": "A web application that helps users create structured workout plans based on their goals. Supports custom scheduling like boxing, calisthenics, and strength training splits. Designed to help users maintain consistency and track their fitness routine effectively.",
+    "stack": ["React", "JavaScript", "CSS", "Local Storage"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "thumbnail": "",
+    "status": "completed",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "04",
+    "title": "MERN Portfolio Website",
+    "tagline": "Dynamic developer portfolio",
+    "description": "A personal portfolio website built using the MERN stack to showcase projects, skills, and contact information. Features smooth animations, responsive design, and a backend for managing project data dynamically.",
+    "stack": ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "thumbnail": "",
+    "status": "in-progress",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "id": "05",
+    "title": "Task & Sprint Manager",
+    "tagline": "Developer productivity tool",
+    "description": "A project management tool focused on developers to manage tasks, track progress, and organize sprints. Includes features like task creation, status tracking, and structured workflow management for better productivity.",
+    "stack": ["React", "Node.js", "Express", "MongoDB"],
+    "liveUrl": "",
+    "githubUrl": "",
+    "thumbnail": "",
+    "status": "in-progress",
+    "featured": false,
+    "order": 5
+  }
+]

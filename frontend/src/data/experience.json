@@ -1,0 +1,14 @@
+[
+  {
+    "id": "01",
+    "type": "work",
+    "company": "MentorMind — upGrad x Snapdeal",
+    "role": "MERN Stack Developer Intern",
+    "location": "Remote",
+    "startDate": "Feb 2025",
+    "endDate": "Mar 2025",
+    "description": "One month intensive internship focused on full stack development using the MERN stack. Worked on real-world projects under industry mentors as part of the upGrad x Snapdeal collaboration programme.",
+    "stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "order": 1
+  }
+]

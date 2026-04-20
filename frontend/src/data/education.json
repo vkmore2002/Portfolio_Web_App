@@ -1,0 +1,38 @@
+[
+  {
+    "id": "01",
+    "type": "university",
+    "institution": "Bharati Vidyapeeth (Deemed to be University)",
+    "degree": "B.Tech. Electronics and Communication Engineering",
+    "location": "Pune, IN",
+    "startDate": "Dec 2021",
+    "endDate": "Jun 2025",
+    "description": "Bachelor of Engineering in Electronics and Communication Engineering. Developed strong foundations in both hardware and software domains while actively building full stack web projects on the side.",
+    "grade": "7.7 CGPA",
+    "order": 1
+  },
+  {
+    "id": "02",
+    "type": "school",
+    "institution": "Kendriya Vidyalaya SC Pune",
+    "degree": "Class XII — PCM (CBSE)",
+    "location": "Pune, IN",
+    "startDate": "2020",
+    "endDate": "2021",
+    "description": "Completed Class XII with Physics, Chemistry and Mathematics as core subjects under CBSE board.",
+    "grade": "71.6%",
+    "order": 2
+  },
+  {
+    "id": "03",
+    "type": "school",
+    "institution": "Kendriya Vidyalaya SC Pune",
+    "degree": "Class X (CBSE)",
+    "location": "Pune, IN",
+    "startDate": "2018",
+    "endDate": "2019",
+    "description": "Completed Class X under CBSE board with consistent academic performance.",
+    "grade": "74.6%",
+    "order": 3
+  }
+]
