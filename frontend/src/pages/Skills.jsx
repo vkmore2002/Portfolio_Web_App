@@ -22,13 +22,13 @@ const SkillBar = ({ name, level, index }) => {
   };
 
   return (
-    <div ref={ref} className="mb-5">
+    <div ref={ref} className="mb-4 sm:mb-5">
       {/* Top row */}
-      <div className="flex items-center justify-between mb-2">
-        <span className="font-mono text-sm text-white tracking-wide">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 mb-2">
+        <span className="font-mono text-xs sm:text-sm text-white tracking-wide">
           {name}
         </span>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <span
             className={`font-mono text-xs tracking-widest ${getLabelColor(level)}`}
           >
@@ -71,19 +71,19 @@ const CategoryBlock = ({ category, index }) => {
       initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-      className="border border-neutral-800 bg-neutral-900 p-8 hover:border-red-600 transition-colors duration-300"
+      className="border border-neutral-800 bg-neutral-900 p-6 sm:p-8 hover:border-red-600 transition-colors duration-300"
     >
       {/* Category header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
         <div>
           <p className="font-mono text-xs text-red-500 tracking-widest mb-1">
             [ {category.id} ]
           </p>
-          <h3 className="font-mono text-2xl font-bold text-white tracking-tighter">
+          <h3 className="font-mono text-xl sm:text-2xl font-bold text-white tracking-tighter">
             {category.category}
           </h3>
         </div>
-        <span className="font-mono text-xs text-gray-600 tracking-widest">
+        <span className="font-mono text-xs text-gray-600 tracking-widest flex-shrink-0">
           {category.skills.length} SKILLS
         </span>
       </div>
@@ -103,31 +103,31 @@ const CategoryBlock = ({ category, index }) => {
 
 const Skills = () => {
   return (
-    <main className="bg-black min-h-screen pt-24 pb-20 px-8 md:px-20">
+    <main className="bg-black min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20">
       {/* Page header */}
-      <div className="mb-16">
-        <p className="font-mono text-sm text-gray-500 tracking-widest uppercase mb-3">
+      <div className="mb-12 sm:mb-16">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-2 sm:mb-3">
           [ Technical Skills ]
         </p>
-        <h1 className="font-mono text-5xl md:text-6xl font-bold text-white tracking-tighter">
+        <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter">
           What I<br />
           <span className="text-red-500">Know.</span>
         </h1>
-        <p className="font-mono text-sm text-gray-500 mt-4">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
           {skills.reduce((acc, cat) => acc + cat.skills.length, 0)} skills
           across {skills.length} categories
         </p>
       </div>
 
       {/* Skills grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {skills.map((category, index) => (
           <CategoryBlock key={category.id} category={category} index={index} />
         ))}
       </div>
 
       {/* Bottom note */}
-      <div className="mt-16 border-t border-neutral-800 pt-8">
+      <div className="mt-12 sm:mt-16 border-t border-neutral-800 pt-6 sm:pt-8">
         <p className="font-mono text-xs text-gray-600 tracking-widest text-center">
           [ ALWAYS LEARNING — ALWAYS BUILDING ]
         </p>

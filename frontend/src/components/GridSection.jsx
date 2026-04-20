@@ -99,26 +99,26 @@ const GridCard = ({ card, index }) => {
       onClick={() => navigate(card.path)}
     >
       <SpotlightCard
-        className="h-56 p-8 group"
+        className="h-48 sm:h-56 p-6 sm:p-8 group"
         spotlightColor={card.spotlightColor}
       >
         {/* Top row */}
-        <div className="flex items-start justify-between mb-6">
+        <div className="flex items-start justify-between mb-4 sm:mb-6">
           <span className="font-mono text-xs text-red-500 tracking-widest">
             [ {card.id} ]
           </span>
-          <span className="font-mono text-gray-600 text-lg group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300">
+          <span className="font-mono text-gray-600 text-lg sm:text-xl group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-300">
             →
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="font-mono text-2xl md:text-3xl font-bold text-white tracking-tighter mb-3 group-hover:text-red-500 transition-colors duration-300">
+        <h2 className="font-mono text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tighter mb-2 sm:mb-3 group-hover:text-red-500 transition-colors duration-300">
           {card.title}
         </h2>
 
         {/* Description */}
-        <p className="font-mono text-sm text-gray-500 leading-relaxed">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 leading-relaxed">
           {card.description}
         </p>
 
@@ -143,20 +143,20 @@ const GridSection = () => {
     <motion.section
       ref={ref}
       style={{ opacity: sectionOpacity, y: sectionY }}
-      className="relative bg-black py-24 px-8 md:px-20 z-10"
+      className="relative bg-black py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-16 lg:px-20 z-10"
     >
       {/* Section header */}
-      <div className="mb-16">
-        <p className="font-mono text-sm text-gray-500 tracking-widest uppercase mb-3">
+      <div className="mb-12 sm:mb-16">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-2 sm:mb-3">
           [ Explore ]
         </p>
-        <h2 className="font-mono text-4xl md:text-5xl font-bold text-white tracking-tighter">
+        <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter">
           What I do<span className="text-red-500">.</span>
         </h2>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {cards.map((card, index) => (
           <GridCard key={card.id} card={card} index={index} />
         ))}

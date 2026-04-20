@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import projects from "../data/projects.json";
 
@@ -65,17 +65,17 @@ const ProjectCard = ({ project, index }) => {
             </div>
           )}
 
-          {/* GitHub + Live buttons */}
-          <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* GitHub + Live buttons */}
+          <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="w-8 h-8 bg-black border border-neutral-700 flex items-center justify-center hover:border-white transition-colors"
+                className="w-7 sm:w-8 h-7 sm:h-8 bg-black border border-neutral-700 flex items-center justify-center hover:border-white transition-colors text-xs"
               >
-                <span className="font-mono text-white text-xs">GH</span>
+                <span className="font-mono text-white">GH</span>
               </a>
             )}
             {project.liveUrl && (
@@ -84,7 +84,7 @@ const ProjectCard = ({ project, index }) => {
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="w-8 h-8 bg-black border border-neutral-700 flex items-center justify-center hover:border-white transition-colors"
+                className="w-7 sm:w-8 h-7 sm:h-8 bg-black border border-neutral-700 flex items-center justify-center hover:border-white transition-colors"
               >
                 <span className="font-mono text-white text-xs">↗</span>
               </a>
@@ -93,21 +93,21 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Card content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {/* Top row */}
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 mb-3">
             <span className="font-mono text-xs text-red-500 tracking-widest">
               [ {project.id} ]
             </span>
             <span
-              className={`font-mono text-xs tracking-widest border px-2 py-0.5 ${status.text} ${status.border}`}
+              className={`font-mono text-xs tracking-widest border px-2 py-0.5 ${status.text} ${status.border} flex-shrink-0`}
             >
               {status.label}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="font-mono text-xl font-bold text-white tracking-tighter mb-1 group-hover:text-red-500 transition-colors duration-300">
+          <h3 className="font-mono text-lg sm:text-xl font-bold text-white tracking-tighter mb-1 group-hover:text-red-500 transition-colors duration-300">
             {project.title}
           </h3>
 
@@ -117,7 +117,7 @@ const ProjectCard = ({ project, index }) => {
           </p>
 
           {/* Description */}
-          <p className="font-mono text-sm text-gray-400 leading-relaxed mb-4">
+          <p className="font-mono text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
             {project.description}
           </p>
 
@@ -142,26 +142,37 @@ const ProjectCard = ({ project, index }) => {
 };
 
 const Projects = () => {
-  // Responsive column count
-  const getMasonryStyle = () => ({
-    columnCount:
-      window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1,
-    columnGap: "1rem",
-  });
+  const [columnCount, setColumnCount] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setColumnCount(1);
+      } else if (window.innerWidth < 1024) {
+        setColumnCount(2);
+      } else {
+        setColumnCount(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <main className="bg-black min-h-screen pt-24 pb-20 px-8 md:px-20">
+    <main className="bg-black min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20">
       {/* Page header */}
-      <div className="mb-16">
-        <p className="font-mono text-sm text-gray-500 tracking-widest uppercase mb-3">
+      <div className="mb-12 sm:mb-16">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-2 sm:mb-3">
           [ All Projects ]
         </p>
-        <h1 className="font-mono text-5xl md:text-6xl font-bold text-white tracking-tighter">
+        <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter">
           Things I've
           <br />
           <span className="text-red-500">Built.</span>
         </h1>
-        <p className="font-mono text-sm text-gray-500 mt-4">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
           {projects.length} projects — personal, academic and freelance
         </p>
       </div>
@@ -169,7 +180,7 @@ const Projects = () => {
       {/* Masonry grid */}
       <div
         style={{
-          columnCount: 3,
+          columnCount: columnCount,
           columnGap: "1rem",
         }}
       >

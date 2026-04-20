@@ -52,7 +52,7 @@ const Hero = () => {
     <motion.section
       ref={ref}
       style={{ opacity, scale }}
-      className="relative h-screen w-full bg-black flex items-center px-8 md:px-20 overflow-hidden sticky top-0"
+      className="relative h-screen w-full bg-black flex items-center px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden sticky top-0"
     >
       {/* Darkness overlay on scroll */}
       <motion.div
@@ -72,35 +72,35 @@ const Hero = () => {
 
       {/* Left — Text */}
       <div className="flex-1 flex flex-col justify-center z-10">
-        <p className="font-mono text-sm text-gray-500 tracking-widest uppercase mb-6">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-4 sm:mb-6">
           [ Portfolio — 2025 ]
         </p>
 
-        <h1 className="font-mono text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tighter uppercase">
+        <h1 className="font-mono text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-none tracking-tighter uppercase">
           Vivek<span className="text-red-500">.</span>
           <br />
           More
           <span className="text-red-500">_</span>
         </h1>
 
-        <div className="mt-8 flex items-center gap-1">
-          <span className="font-mono text-lg md:text-xl text-gray-400">
+        <div className="mt-6 sm:mt-8 flex items-center gap-1 flex-wrap">
+          <span className="font-mono text-base sm:text-lg md:text-xl text-gray-400">
             {currentTagline}
           </span>
           <span className="w-0.5 h-5 bg-red-500 animate-pulse inline-block" />
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex items-center gap-4">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
           <a
             href="/projects"
-            className="font-mono text-sm tracking-widest uppercase px-6 py-3 bg-red-600 text-white hover:bg-red-700 transition-colors"
+            className="font-mono text-xs sm:text-sm tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 bg-red-600 text-white hover:bg-red-700 transition-colors w-full sm:w-auto text-center"
           >
             View Work →
           </a>
           <a
             href="/contact"
-            className="font-mono text-sm tracking-widest uppercase px-6 py-3 border border-gray-600 text-gray-400 hover:border-white hover:text-white transition-colors"
+            className="font-mono text-xs sm:text-sm tracking-widest uppercase px-4 sm:px-6 py-2.5 sm:py-3 border border-gray-600 text-gray-400 hover:border-white hover:text-white transition-colors w-full sm:w-auto text-center"
           >
             Contact Me
           </a>
@@ -115,14 +115,14 @@ const Hero = () => {
       </div>
 
       {/* Bottom row */}
-      <div className="absolute bottom-10 left-8 md:left-20 right-8 md:right-20 flex items-center justify-between z-10">
+      <div className="absolute bottom-8 sm:bottom-10 left-4 sm:left-8 md:left-16 lg:left-20 right-4 sm:right-8 md:right-16 lg:right-20 flex items-center justify-between z-10">
         <p className="font-mono text-xs text-gray-600 tracking-widest uppercase">
           Scroll to explore
         </p>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="font-mono text-red-500 text-xl"
+          className="font-mono text-red-500 text-lg sm:text-xl"
         >
           ↓
         </motion.div>

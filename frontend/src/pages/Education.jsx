@@ -26,7 +26,7 @@ const EducationCard = ({ item, index }) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <div className="relative flex gap-6 mb-8">
+    <div className="relative flex gap-4 sm:gap-6 mb-6 sm:mb-8">
       {/* Left number */}
       <div className="hidden md:flex flex-col items-center">
         <div
@@ -46,52 +46,52 @@ const EducationCard = ({ item, index }) => {
         className="flex-1 group"
       >
         <div
-          className={`border bg-neutral-900 p-8 hover:border-red-600 transition-colors duration-300 ${config.border} border-opacity-30`}
+          className={`border bg-neutral-900 p-6 sm:p-8 hover:border-red-600 transition-colors duration-300 ${config.border} border-opacity-30`}
         >
           {/* Top row */}
-          <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
             <div>
               <span
                 className={`font-mono text-xs tracking-widest ${config.color} mb-2 block`}
               >
                 [ {config.label} ] — [ {item.id} ]
               </span>
-              <h3 className="font-mono text-2xl font-bold text-white tracking-tighter group-hover:text-red-500 transition-colors duration-300">
+              <h3 className="font-mono text-xl sm:text-2xl font-bold text-white tracking-tighter group-hover:text-red-500 transition-colors duration-300">
                 {item.degree}
               </h3>
             </div>
 
             {/* Grade badge */}
             {item.grade && (
-              <span className="font-mono text-sm text-amber-400 border border-amber-500 border-opacity-50 px-3 py-1 tracking-widest shrink-0">
+              <span className="font-mono text-xs sm:text-sm text-amber-400 border border-amber-500 border-opacity-50 px-2 sm:px-3 py-1 tracking-widest shrink-0">
                 {item.grade}
               </span>
             )}
           </div>
 
           {/* Institution + location */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="font-mono text-sm text-gray-300 font-bold">
+          <div className="flex flex-col gap-1 mb-4 sm:mb-5">
+            <span className="font-mono text-xs sm:text-sm text-gray-300 font-bold">
               {item.institution}
             </span>
-          </div>
-          <div className="flex items-center gap-3 mb-5">
-            <span className="font-mono text-xs text-gray-500">
-              {item.location}
-            </span>
-            <span className="text-gray-700">·</span>
-            <span className="font-mono text-xs text-gray-500 tracking-widest">
-              {item.startDate} — {item.endDate}
-            </span>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+              <span className="font-mono text-xs text-gray-500">
+                {item.location}
+              </span>
+              <span className="hidden sm:block text-gray-700">·</span>
+              <span className="font-mono text-xs text-gray-500 tracking-widest">
+                {item.startDate} — {item.endDate}
+              </span>
+            </div>
           </div>
 
           {/* Description */}
-          <p className="font-mono text-sm text-gray-400 leading-relaxed">
+          <p className="font-mono text-xs sm:text-sm text-gray-400 leading-relaxed">
             {item.description}
           </p>
 
           {/* Bottom hover line */}
-          <div className="h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-500 mt-6" />
+          <div className="h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-500 mt-4 sm:mt-6" />
         </div>
       </motion.div>
     </div>
@@ -100,18 +100,18 @@ const EducationCard = ({ item, index }) => {
 
 const Education = () => {
   return (
-    <main className="bg-black min-h-screen pt-24 pb-20 px-8 md:px-20">
+    <main className="bg-black min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20">
       {/* Page header */}
-      <div className="mb-16">
-        <p className="font-mono text-sm text-gray-500 tracking-widest uppercase mb-3">
+      <div className="mb-12 sm:mb-16">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-2 sm:mb-3">
           [ Academic Background ]
         </p>
-        <h1 className="font-mono text-5xl md:text-6xl font-bold text-white tracking-tighter">
+        <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter">
           Edu-
           <br />
           <span className="text-red-500">cation.</span>
         </h1>
-        <p className="font-mono text-sm text-gray-500 mt-4">
+        <p className="font-mono text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
           {education.length} institutions — CBSE + University
         </p>
       </div>
@@ -124,7 +124,7 @@ const Education = () => {
       </div>
 
       {/* Bottom note */}
-      <div className="mt-16 border-t border-neutral-800 pt-8">
+      <div className="mt-12 sm:mt-16 border-t border-neutral-800 pt-6 sm:pt-8">
         <p className="font-mono text-xs text-gray-600 tracking-widest text-center">
           [ B.E. GRADUATING — JUN 2025 — PUNE, IN ]
         </p>
