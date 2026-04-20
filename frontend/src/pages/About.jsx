@@ -123,19 +123,25 @@ const About = () => {
               <p className="font-mono text-xs text-gray-600 tracking-widest uppercase mb-1">
                 Location
               </p>
-              <p className="font-mono text-xs sm:text-sm text-white">Pune, India</p>
+              <p className="font-mono text-xs sm:text-sm text-white">
+                Pune, India
+              </p>
             </div>
             <div>
               <p className="font-mono text-xs text-gray-600 tracking-widest uppercase mb-1">
                 Degree
               </p>
-              <p className="font-mono text-xs sm:text-sm text-white">B.E. ECE — 2025</p>
+              <p className="font-mono text-xs sm:text-sm text-white">
+                B.E. ECE — 2025
+              </p>
             </div>
             <div>
               <p className="font-mono text-xs text-gray-600 tracking-widest uppercase mb-1">
                 Focus
               </p>
-              <p className="font-mono text-xs sm:text-sm text-white">Full Stack Dev</p>
+              <p className="font-mono text-xs sm:text-sm text-white">
+                Full Stack Dev
+              </p>
             </div>
             <div>
               <p className="font-mono text-xs text-gray-600 tracking-widest uppercase mb-1">

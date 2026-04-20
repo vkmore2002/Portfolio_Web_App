@@ -173,7 +173,9 @@ const Contact = () => {
           {status === "success" ? (
             <div className="flex flex-col items-center justify-center gap-4 py-16 sm:py-20">
               <div className="w-12 sm:w-16 h-12 sm:h-16 border-2 border-green-500 flex items-center justify-center">
-                <span className="font-mono text-green-500 text-xl sm:text-2xl">✓</span>
+                <span className="font-mono text-green-500 text-xl sm:text-2xl">
+                  ✓
+                </span>
               </div>
               <p className="font-mono text-base sm:text-lg text-white tracking-tighter">
                 Message sent.
@@ -189,7 +191,10 @@ const Contact = () => {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 sm:gap-6"
+            >
               {/* Name */}
               <div>
                 <label className="font-mono text-xs text-gray-600 tracking-widest uppercase block mb-2">

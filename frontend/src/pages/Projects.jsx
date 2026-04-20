@@ -65,7 +65,7 @@ const ProjectCard = ({ project, index }) => {
             </div>
           )}
 
-        {/* GitHub + Live buttons */}
+          {/* GitHub + Live buttons */}
           <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {project.githubUrl && (
               <a
