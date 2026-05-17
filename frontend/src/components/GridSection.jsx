@@ -2,8 +2,6 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import SpotlightCard from "./SpotlightCard";
-import { lazy, Suspense } from "react";
-import Hero from "../components/Hero";
 
 const cards = [
   {
@@ -60,7 +58,7 @@ const cards = [
 const GridCard = ({ card, index }) => {
   const ref = useRef(null);
   const navigate = useNavigate();
-  const isInView = useInView(ref, { once: false, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const variants = {
     hidden: {
@@ -97,6 +95,12 @@ const GridCard = ({ card, index }) => {
       animate={isInView ? "visible" : "exit"}
       className="cursor-pointer"
       onClick={() => navigate(card.path)}
+      onKeyDown={(e) =>
+        (e.key === "Enter" || e.key === " ") && navigate(card.path)
+      }
+      role="button"
+      tabIndex={0}
+      aria-label={`Navigate to ${card.title}`}
     >
       <SpotlightCard
         className="h-48 sm:h-56 p-6 sm:p-8 group"

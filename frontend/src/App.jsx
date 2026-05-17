@@ -10,6 +10,7 @@ import Skills from "./pages/Skills";
 import Certifications from "./pages/Certifications";
 import Education from "./pages/Education";
 import Experience from "./pages/Experience";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
